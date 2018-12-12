@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingBottom="@dimen/cardview_default_elevation"
+    android:paddingTop="@dimen/cardview_default_elevation"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="30dp"
+            android:paddingBottom="20dp"
+            android:paddingLeft="10dp"
+            android:text="Nom : "
+            />
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="50dp"
+            android:paddingTop="30dp"
+            android:paddingBottom="20dp"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:paddingBottom="20dp"
+            android:paddingLeft="230dp"
+            android:text="Heures Planifier : "
+            android:textColor="@color/colorPrimary"
+            />
+
+        <TextView
+            android:id="@+id/heurs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="340dp"
+            android:paddingTop="10dp"
+            android:paddingRight="10dp"
+            android:textColor="@color/colorPrimary"
+
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:paddingTop="50dp"
+            android:paddingLeft="10dp"
+            android:paddingBottom="20dp"
+            android:text="Email : "
+            />
+
+        <TextView
+            android:id="@+id/email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:paddingTop="50dp"
+            android:paddingLeft="60dp"
+            android:paddingBottom="20dp"
+
+            />
+        <TextView
+            android:id="@+id/begindate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:paddingTop="80dp"
+            android:paddingLeft="10dp"
+            android:paddingBottom="20dp"
+            android:text="Date du debut :"
+
+            />
+        <TextView
+            android:id="@+id/begin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:paddingTop="80dp"
+            android:paddingLeft="120dp"
+            android:paddingBottom="20dp"
+
+            />
+        <TextView
+            android:id="@+id/deadline"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:paddingTop="110dp"
+            android:paddingLeft="10dp"
+            android:paddingBottom="20dp"
+            android:text="Date echeance :"
+
+            />
+        <TextView
+            android:id="@+id/end"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:paddingTop="110dp"
+            android:paddingLeft="120dp"
+            android:paddingBottom="20dp"
+            android:textColor="@color/colorAccent"
+
+            />
+
+
+    </android.support.v7.widget.CardView>
+
+
+</LinearLayout>
