@@ -59,7 +59,7 @@ public class ProjectListAdapter extends ArrayAdapter<String>{
         viewHolder.ProjectName.setText(SelectedOne.name);
         viewHolder.ProjectDate.setText(SelectedOne.create_date);
         viewHolder.ProjectTasks.setText(SelectedOne.label_tasks);
-        viewHolder.ProjectDate.setText(SelectedOne.create_date);
+        viewHolder.ProjectTasksCount.setText(SelectedOne.task_count);
         context.registerForContextMenu(viewHolder.ProjectName);
         return r;
     }

@@ -20,6 +20,7 @@
             android:paddingBottom="20dp"
             android:paddingLeft="10dp"
             android:text="Nom : "
+            android:textColor="@color/colorPrimaryDark"
             />
 
         <TextView
@@ -60,6 +61,7 @@
             android:paddingLeft="10dp"
             android:paddingBottom="20dp"
             android:text="Email : "
+            android:textColor="@color/colorPrimaryDark"
             />
 
         <TextView
@@ -81,6 +83,8 @@
             android:paddingLeft="10dp"
             android:paddingBottom="20dp"
             android:text="Date du debut :"
+            android:textColor="@color/colorPrimaryDark"
+
 
             />
         <TextView
@@ -102,6 +106,8 @@
             android:paddingLeft="10dp"
             android:paddingBottom="20dp"
             android:text="Date echeance :"
+            android:textColor="@color/colorPrimaryDark"
+
 
             />
         <TextView

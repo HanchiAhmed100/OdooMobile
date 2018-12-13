@@ -28,9 +28,10 @@ import static java.util.Collections.emptyMap;
 
 public class TasksListActivity extends AppCompatActivity {
 
-    final String url = "http://192.168.1.9:8069", db = "hanchi", username = "admin", password = "admin";
+    final String url = "http://192.168.1.30:8069", db = "hanchi";
     private ArrayList<Tasks> Tasks = new ArrayList<>();
     private TasksListAdapter adapter;
+    int projectid;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,19 +61,22 @@ public class TasksListActivity extends AppCompatActivity {
                     }});
                 }};
                 try {
+                    Intent i = getIntent();
+                    Bundle extras = getIntent().getExtras();
+
                     common_config.setServerURL( new URL(String.format("%s/xmlrpc/2/common", url)));
                     int uid = (int)Client.execute(
                             common_config, "authenticate", asList(
-                                    db, username, password, emptyMap()));
+                                    db, extras.getString("mail"), extras.getString("password"), emptyMap()));
 
-                    Intent i = getIntent();
-                    Bundle extras = getIntent().getExtras();
+
+
                     System.out.println();
                     System.out.println(extras.getInt("id"));
-
+                    projectid = extras.getInt("id");
 
                     List x = asList((Object[])models.execute("execute_kw", asList(
-                            db, uid, password,
+                            db, uid,  extras.getString("password"),
                             "project.task", "search_read",
                             asList(asList(asList("project_id","=" ,extras.getInt("id") ))),
                             //asList(asList()),
@@ -112,8 +116,14 @@ public class TasksListActivity extends AppCompatActivity {
         }).start();
     }
 
-    public void ReturnView(View view) {
-        Intent i = new Intent(this,MainActivity.class);
+    public void add(View view) {
+        Intent x = getIntent();
+        Bundle extras = getIntent().getExtras();
+        Intent i = new Intent(this,AddTasks.class);
+        i.putExtra("password",extras.getString("password"));
+        i.putExtra("mail",extras.getString("mail"));
+        i.putExtra("id",projectid);
+        System.out.println("////////////////////////////////////////////"+projectid);
         startActivity(i);
     }
 }

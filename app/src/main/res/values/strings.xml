@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">OdooMobile</string>
+    <string name="title_activity_add_tasks">AddTasks</string>
 </resources>

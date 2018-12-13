@@ -30,7 +30,7 @@ import static java.util.Collections.emptyMap;
 
 public class ListViewProjectList extends AppCompatActivity {
 
-    final String url = "http://192.168.1.9:8069", db = "hanchi", username = "admin", password = "admin";
+    final String url = "http://192.168.1.30:8069", db = "hanchi";
     private ArrayList<Project> projects = new ArrayList<>();
     private ProjectListAdapter adapter;
 
@@ -52,11 +52,15 @@ public class ListViewProjectList extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
                 Integer id  =  (Integer)((Project)projects.get(i)).id;
-                System.out.println("********** id = **********"+id);
                 Toast.makeText(ListViewProjectList.this,"Projet : " + (String)((Project)projects.get(i)).name ,Toast.LENGTH_LONG).show();
+
+                Intent x = getIntent();
+                Bundle extras = getIntent().getExtras();
 
                 Intent intent = new Intent(getApplicationContext(),TasksListActivity.class);
                 intent.putExtra("id",id);
+                intent.putExtra("mail",extras.getString("mail"));
+                intent.putExtra("password",extras.getString("password"));
                 startActivity(intent);
 
             }
@@ -68,6 +72,9 @@ public class ListViewProjectList extends AppCompatActivity {
         new Thread(new Runnable() {
             @Override
             public void run() {
+
+                Intent i = getIntent();
+                Bundle extras = getIntent().getExtras();
 
                 XmlRpcClient Client = new XmlRpcClient();
                 final XmlRpcClientConfigImpl common_config = new XmlRpcClientConfigImpl();
@@ -84,15 +91,16 @@ public class ListViewProjectList extends AppCompatActivity {
                     common_config.setServerURL( new URL(String.format("%s/xmlrpc/2/common", url)));
                     int uid = (int)Client.execute(
                             common_config, "authenticate", asList(
-                                    db, username, password, emptyMap()));
+                                    db, extras.getString("mail") , extras.getString("password"), emptyMap()));
+
+
 
                     List x = asList((Object[])models.execute("execute_kw", asList(
-                            db, uid, password,
+                            db, uid , extras.getString("password"),
                             "project.project", "search_read",
                             asList(asList()),
                             new HashMap() {{
                                 put("fields", asList("name", "create_date" , "date_start" , "label_tasks" , "task_count" , "project_count" , "id"));
-                                put("limit", 5);
                             }}
                     )));
 
@@ -104,9 +112,10 @@ public class ListViewProjectList extends AppCompatActivity {
                         int id = o.getInt("id");
                         String Name = o.getString("name");
                         String createdDate = o.getString("create_date");
-                        int taskCount = o.getInt("task_count");
+                        String Count = o.getString("task_count");
+
                         String tasks = o.getString("label_tasks");
-                        Project p = new Project(id,Name,taskCount,createdDate,tasks);
+                        Project p = new Project(id,Name,Count,createdDate,tasks);
                         System.out.println(p.toString());
                         projects.add(p);
                     }
@@ -120,5 +129,14 @@ public class ListViewProjectList extends AppCompatActivity {
                 }
             }
         }).start();
+    }
+
+    void add(View v){
+        Intent x = getIntent();
+        Bundle extras = getIntent().getExtras();
+        Intent i = new Intent(this,addProject.class);
+        i.putExtra("password",extras.getString("password"));
+        i.putExtra("mail",extras.getString("mail"));
+        startActivity(i);
     }
 }

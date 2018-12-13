@@ -21,7 +21,12 @@
         </activity>
         <activity android:name=".LoginActivity" />
         <activity android:name=".TasksListActivity" />
-        <activity android:name=".ListViewProjectList"></activity>
+        <activity android:name=".ListViewProjectList" />
+        <activity android:name=".addProject" />
+        <activity
+            android:name=".AddTasks"
+            android:label="@string/title_activity_add_tasks"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

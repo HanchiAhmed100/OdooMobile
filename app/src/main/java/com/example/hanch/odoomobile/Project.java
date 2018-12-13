@@ -8,11 +8,11 @@ public class Project {
 
     int id;
     String name;
-    int task_count;
+    String task_count;
     String create_date;
     String label_tasks;
 
-    public Project(int id ,String name, int task_count, String create_date, String label_tasks) {
+    public Project(int id ,String name, String task_count, String create_date, String label_tasks) {
         this.id = id;
         this.name = name;
         this.task_count = task_count;
@@ -44,11 +44,11 @@ public class Project {
     }
 
 
-    public int getTask_count() {
+    public String getTask_count() {
         return task_count;
     }
 
-    public void setTask_count(int task_count) {
+    public void setTask_count(String task_count) {
         this.task_count = task_count;
     }
 

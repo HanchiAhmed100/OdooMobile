@@ -13,13 +13,23 @@
         android:layout_height="wrap_content"
         >
 
+        <TextView
+            android:id="@+id/nom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:paddingTop="30dp"
+            android:paddingBottom="20dp"
+            android:text="Nom du projet :"
+            android:textColor="@color/colorPrimaryDark"
+            />
 
         <TextView
             android:id="@+id/ProjectName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingLeft="10dp"
-            android:paddingTop="10dp"
+            android:paddingLeft="120dp"
+            android:paddingTop="30dp"
             android:paddingBottom="20dp"
             />
 
@@ -29,18 +39,42 @@
             android:layout_height="wrap_content"
             android:paddingLeft="250dp"
             android:paddingTop="10dp"
+            android:textColor="@color/colorPrimary"
 
+            />
+
+        <TextView
+            android:id="@+id/noms"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:paddingTop="50dp"
+            android:paddingBottom="20dp"
+            android:text="Taches : "
+            android:layout_marginTop="10dp"
+            android:textColor="@color/colorPrimaryDark"
             />
 
         <TextView
             android:id="@+id/TasksName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:paddingTop="50dp"
+            android:paddingLeft="70dp"
             android:layout_marginTop="10dp"
-            android:paddingTop="40dp"
-            android:paddingLeft="10dp"
             android:paddingBottom="20dp"
 
+
+            />
+        <TextView
+            android:id="@+id/number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="50dp"
+            android:layout_marginTop="10dp"
+            android:paddingLeft="250dp"
+            android:text="Nombre : "
+            android:textColor="@color/colorAccent"
 
             />
 
@@ -48,9 +82,10 @@
             android:id="@+id/TasksCount"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingTop="20dp"
+            android:paddingTop="50dp"
             android:layout_marginTop="10dp"
-            android:paddingLeft="250dp"
+            android:paddingLeft="310dp"
+            android:textColor="@color/colorAccent"
 
             />
 
