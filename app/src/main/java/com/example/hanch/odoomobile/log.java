@@ -1,10 +1,11 @@
 package com.example.hanch.odoomobile;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -19,22 +20,26 @@ import java.net.URL;
 import static java.util.Arrays.asList;
 import static java.util.Collections.emptyMap;
 
-public class LoginActivity extends AppCompatActivity {
+public class log extends AppCompatActivity {
 
     EditText mail, password;
     final String url = "http://192.168.43.224:8069", db = "hanchi";
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
+
+        requestWindowFeature(Window.FEATURE_NO_TITLE);//will hide the title
+        getSupportActionBar().hide(); //hide the title bar
+        //Remove notification bar
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
+        setContentView(R.layout.activity_log);
         mail = (EditText) findViewById(R.id.Username);
         password = (EditText) findViewById(R.id.password);
 
-
     }
-
 
     private void run() {
         new Thread(new Runnable() {
@@ -65,20 +70,23 @@ public class LoginActivity extends AppCompatActivity {
 
                         System.out.println(uid);
                         if(uid == "false"){
-                            Intent i = new Intent(getApplicationContext(),LoginActivity.class);
-                            startActivity(i);
+
                             runOnUiThread(new Runnable() {
                                 public void run() {
                                     Toast.makeText(getApplicationContext(), "Mail ou mot de passe incorrecte !", Toast.LENGTH_LONG).show();
+
                                 }
 
                             });
+
+                            Intent i = new Intent(getApplicationContext(),log.class);
+                            startActivity(i);
 
 
                         }else {
                             runOnUiThread(new Runnable() {
                                 public void run() {
-                                    Toast.makeText(getApplicationContext(), "Bonjour :D ", Toast.LENGTH_LONG).show();
+                                    Toast.makeText(getApplicationContext(), " Bonjour  ", Toast.LENGTH_LONG).show();
                                 }
 
                             });

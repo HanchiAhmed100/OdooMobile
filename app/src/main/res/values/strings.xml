@@ -1,4 +1,11 @@
 <resources>
     <string name="app_name">OdooMobile</string>
     <string name="title_activity_add_tasks">AddTasks</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Connexion</string>
+    <string name="invalid_email">This email address is invalid</string>
+    <string name="invalid_password">Password is too short</string>
+    <string name="incorrect_password">Password is incorrect</string>
+    <string name="field_required">This field is required</string>
 </resources>

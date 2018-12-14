@@ -30,7 +30,7 @@ import static java.util.Collections.emptyMap;
 
 public class ListViewProjectList extends AppCompatActivity {
 
-    final String url = "http://192.168.1.30:8069", db = "hanchi";
+    final String url = "http://192.168.43.224:8069", db = "hanchi";
     private ArrayList<Project> projects = new ArrayList<>();
     private ProjectListAdapter adapter;
 

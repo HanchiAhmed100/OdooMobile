@@ -28,7 +28,7 @@ import static java.util.Collections.emptyMap;
 
 public class TasksListActivity extends AppCompatActivity {
 
-    final String url = "http://192.168.1.30:8069", db = "hanchi";
+    final String url = "http://192.168.43.224:8069", db = "hanchi";
     private ArrayList<Tasks> Tasks = new ArrayList<>();
     private TasksListAdapter adapter;
     int projectid;

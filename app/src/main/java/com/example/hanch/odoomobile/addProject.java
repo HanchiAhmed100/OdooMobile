@@ -22,7 +22,7 @@ import static java.util.Collections.emptyMap;
 public class addProject extends AppCompatActivity {
 
     EditText nom;
-    final String url = "http://192.168.1.30:8069", db = "hanchi";
+    final String url = "http://192.168.43.224:8069", db = "hanchi";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,7 +72,7 @@ public class addProject extends AppCompatActivity {
 
                     runOnUiThread(new Runnable() {
                         public void run() {
-                            Toast.makeText(getApplicationContext(), "Le projet à été créer ", Toast.LENGTH_LONG).show();
+                            Toast.makeText(getApplicationContext(), "Le projet à été crée ", Toast.LENGTH_LONG).show();
                         }
 
                     });
@@ -96,6 +96,7 @@ public class addProject extends AppCompatActivity {
     void create(View v) {
         this.run();
     }
+
 
 
 }

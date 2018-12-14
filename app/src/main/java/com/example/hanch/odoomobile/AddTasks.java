@@ -1,9 +1,13 @@
 package com.example.hanch.odoomobile;
 
+import android.app.DatePickerDialog;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -14,6 +18,7 @@ import org.apache.xmlrpc.client.XmlRpcClientConfigImpl;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
 
@@ -23,7 +28,11 @@ import static java.util.Collections.emptyMap;
 public class AddTasks extends AppCompatActivity {
 
     EditText nom,heures,ech;
-    final String url = "http://192.168.1.30:8069", db = "hanchi";
+    final String url = "http://192.168.43.224:8069", db = "hanchi";
+    String mch;
+
+    private TextView mydate;
+    private DatePickerDialog.OnDateSetListener mDateListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +40,35 @@ public class AddTasks extends AppCompatActivity {
         setContentView(R.layout.content_add_tasks);
         nom = (EditText) findViewById(R.id.nom);
         heures = (EditText) findViewById(R.id.heurs);
-        ech = (EditText) findViewById(R.id.echance);
+        mydate =(TextView) findViewById(R.id.echance);
+        mydate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Calendar cal = Calendar.getInstance();
+                int year = cal.get(Calendar.YEAR);
+                int mounth = cal.get(Calendar.MONTH);
+                int day = cal.get(Calendar.DAY_OF_MONTH);
+                DatePickerDialog dialog = new DatePickerDialog(AddTasks.this,
+                        android.R.style.Theme_Holo_Light_Dialog_MinWidth,
+                        mDateListener,
+                        year,mounth,day);
+                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                dialog.show();
+            }
+        });
+        mDateListener = new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker datePicker, int year, int month, int day) {
+                month = month+1;
+                String  m = String.valueOf(month);
+                String y = String.valueOf(year);
+                String d = String.valueOf(day);
+                mch =  y+"-"+m+"-"+d;
+                TextView da = (TextView) findViewById(R.id.da);
+                da.setText(mch);
+            }
+        };
+
 
     }
 
@@ -45,7 +82,6 @@ public class AddTasks extends AppCompatActivity {
 
                 final String Mnom = nom.getText().toString();
                 final String Mheures = heures.getText().toString();
-                final String Mech = ech.getText().toString();
 
 
                 Intent i = getIntent();
@@ -76,7 +112,7 @@ public class AddTasks extends AppCompatActivity {
                             db, uid, extras.getString("password"),
 
                             "project.task", "create",
-                            asList(new HashMap() {{ put("name", Mnom);put("date_deadline",Mech );put("planned_hours",Mheures ); put("project_id",projid ); }})
+                            asList(new HashMap() {{ put("name", Mnom);put("date_deadline",mch );put("planned_hours",Mheures ); put("project_id",projid ); }})
 
                     ));
 
@@ -104,7 +140,7 @@ public class AddTasks extends AppCompatActivity {
     }
 
 
-    void create(View v) {
+    public void create(View v) {
         this.run();
     }
 

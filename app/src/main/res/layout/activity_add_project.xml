@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:backgroundTint="#3F51B5"
     android:orientation="vertical"
     tools:context="com.example.hanch.odoomobile.LoginActivity">
 
@@ -11,23 +12,37 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Nom du projet"
-        />
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginTop="40dp"
+        android:text="Nom du projet :"
+        android:textColor="#3F51B5"
+        android:textColorHint="#01579B" />
 
     <EditText
         android:id="@+id/nom"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="#000"
         android:hint="Nom"
         android:inputType="text"
-        />
+        android:maxLines="1"
+        android:singleLine="true"
+        android:textColor="#000" />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginTop="10dp"
+        android:background="#3F51B5"
         android:onClick="create"
         android:text="Créer"
-        />
+        android:textColor="#FFF" />
 
 
 </android.support.v7.widget.LinearLayoutCompat>

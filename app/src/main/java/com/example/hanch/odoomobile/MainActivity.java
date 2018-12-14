@@ -29,7 +29,7 @@ import static java.util.Collections.emptyMap;
 
 public class MainActivity extends AppCompatActivity {
 
-    final String url = "http://192.168.1.30:8069", db = "hanchi", username = "admin", password = "admin";
+    final String url = "http://192.168.43.224:8069", db = "hanchi", username = "admin", password = "admin";
     TextView myid ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -115,6 +115,10 @@ public class MainActivity extends AppCompatActivity {
     }
     public void loginView(View view) {
         Intent i = new Intent(this,LoginActivity.class);
+        startActivity(i);
+    }
+    public void logView(View view) {
+        Intent i = new Intent(this,log.class);
         startActivity(i);
     }
 }

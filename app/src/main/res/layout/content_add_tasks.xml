@@ -11,50 +11,101 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginTop="10dp"
+        android:inputType="text"
+        android:maxLines="1"
+        android:singleLine="true"
         android:text="Nom de la tache :"
-        />
+        android:textColor="#3F51B5" />
 
     <EditText
         android:id="@+id/nom"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="#3F51B5"
         android:hint="Nom"
         android:inputType="text"
-        />
+        android:maxLines="1"
+        android:singleLine="true"
+        android:textColor="#000" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginTop="10dp"
+        android:inputType="text"
+        android:maxLines="1"
+        android:singleLine="true"
         android:text="Heure planifier :"
-        />
+        android:textColor="#3F51B5" />
 
     <EditText
         android:id="@+id/heurs"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="#3F51B5"
         android:hint="1.0"
         android:inputType="number"
-        />
+        android:maxLines="1"
+        android:singleLine="true"
+        android:textColor="#000" />
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Heure planifier :"
-        />
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginTop="10dp"
+        android:inputType="text"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:text="Date echéance :"
+        android:textColor="#3F51B5" />
 
-    <EditText
+    <TextView
         android:id="@+id/echance"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="2018-12-12"
-        android:inputType="text"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="35dp"
+        android:layout_marginRight="25dp"
+        android:text="Cliquer ici pour choisir une date"
+        android:textColor="#01579B"
         />
+    <TextView
+        android:id="@+id/da"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="25dp"
+        android:text=""
+        android:textColor="#01579B"
+        />
+
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="create"
         android:text="Créer"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:textColor="#fff"
+        android:background="#3F51B5"
         />
+
 
 
 </android.support.v7.widget.LinearLayoutCompat>

@@ -11,6 +11,9 @@ tools:context="com.example.hanch.odoomobile.ListViewProjectList">
     android:id="@+id/testbutton"
     android:layout_alignParentBottom="true"
     android:text="Ajouter un projet"
+    android:textColor="#fff"
+    android:background="#3F51B5"
+
     android:onClick="add"/>
 
 <ListView
